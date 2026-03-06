@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoshiko Tech Ltd. | Software Consultancy & Products</title>
+  <meta name="description" content="Hoshiko Tech specializes in high-performance backend infrastructure, distributed systems, and event-driven architecture. Software consultancy and product studio.">
+  <meta name="author" content="Hoshiko Tech Ltd.">
+  <meta property="og:title" content="Hoshiko Tech Ltd. | Software Consultancy & Products">
+  <meta property="og:description" content="Expert software consultancy specializing in backend infrastructure, distributed systems, and event-driven architecture.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.hoshiko.tech">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9733;</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63',
+            }
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.6s ease-out forwards',
+            'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(24px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    .gradient-text {
+      background: linear-gradient(135deg, #22d3ee 0%, #818cf8 50%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-glow {
+      background: radial-gradient(ellipse 80% 60% at 50% -20%, rgba(6, 182, 212, 0.15), transparent);
+    }
+    .card-glow:hover {
+      box-shadow: 0 0 40px rgba(6, 182, 212, 0.08);
+    }
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    [data-animate].visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    [data-animate-delay="1"] { transition-delay: 0.1s; }
+    [data-animate-delay="2"] { transition-delay: 0.2s; }
+    [data-animate-delay="3"] { transition-delay: 0.3s; }
+    [data-animate-delay="4"] { transition-delay: 0.4s; }
+  </style>
+</head>
+<body class="bg-slate-950 text-white antialiased">
+
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="#" class="flex items-center gap-2 text-lg font-bold tracking-tight">
+          <svg class="w-7 h-7 text-brand-400" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M14 10L20 13V19L14 22L8 19V13L14 10Z" fill="currentColor" opacity="0.3"/>
+            <circle cx="14" cy="14" r="3" fill="currentColor"/>
+          </svg>
+          <span>Hoshiko Tech</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#services" class="text-sm text-slate-300 hover:text-white transition-colors">Services</a>
+          <a href="#products" class="text-sm text-slate-300 hover:text-white transition-colors">Products</a>
+          <a href="#about" class="text-sm text-slate-300 hover:text-white transition-colors">About</a>
+          <a href="#contact" class="inline-flex items-center gap-2 text-sm font-medium px-5 py-2.5 rounded-lg bg-brand-500 hover:bg-brand-400 text-slate-950 transition-colors">
+            Contact Us
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4">
+        <div class="flex flex-col gap-2">
+          <a href="#services" class="text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800/50 transition-colors">Services</a>
+          <a href="#products" class="text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800/50 transition-colors">Products</a>
+          <a href="#about" class="text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800/50 transition-colors">About</a>
+          <a href="#contact" class="text-sm font-medium px-3 py-2 rounded-lg bg-brand-500 hover:bg-brand-400 text-slate-950 text-center transition-colors">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center hero-glow grid-bg overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="absolute top-1/4 -left-32 w-64 h-64 bg-brand-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-1/4 -right-32 w-64 h-64 bg-violet-500/10 rounded-full blur-3xl"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+      <div class="max-w-4xl">
+        <div class="animate-fade-in">
+          <span class="inline-flex items-center gap-2 text-sm font-medium text-brand-400 mb-6 px-3 py-1 rounded-full border border-brand-400/20 bg-brand-400/5">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse"></span>
+            Software Consultancy & Product Studio
+          </span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] animate-fade-in-up">
+          We Build Systems<br>
+          <span class="gradient-text">That Scale</span>
+        </h1>
+
+        <p class="mt-6 md:mt-8 text-lg md:text-xl text-slate-400 max-w-2xl leading-relaxed animate-fade-in-up" style="animation-delay: 0.15s">
+          Specializing in high-performance backend infrastructure, distributed systems, and event-driven architecture. From consultancy to products &mdash; we engineer excellence.
+        </p>
+
+        <div class="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4 animate-fade-in-up" style="animation-delay: 0.3s">
+          <a href="#services" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-brand-500 hover:bg-brand-400 text-slate-950 font-semibold transition-all hover:shadow-lg hover:shadow-brand-500/25">
+            Explore Services
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <a href="#products" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg border border-slate-700 hover:border-slate-500 text-white font-semibold transition-all hover:bg-slate-800/50">
+            View Products
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+
+        <!-- Tech stack indicators -->
+        <div class="mt-16 md:mt-20 flex flex-wrap gap-3 animate-fade-in-up" style="animation-delay: 0.45s">
+          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Scala</span>
+          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Distributed Systems</span>
+          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Event-Driven</span>
+          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">AWS</span>
+          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Microservices</span>
+          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Reactive</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="relative py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl" data-animate>
+        <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">What We Do</span>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Expert Software Consultancy</h2>
+        <p class="mt-4 text-lg text-slate-400">We bring deep expertise in functional programming and modern infrastructure to help you build reliable, scalable systems.</p>
+      </div>
+
+      <div class="mt-16 grid md:grid-cols-3 gap-6">
+        <!-- Service 1 -->
+        <div class="group relative p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 card-glow transition-all duration-300" data-animate data-animate-delay="1">
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-brand-500/10 text-brand-400 mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">High Performance Backend</h3>
+          <p class="text-slate-400 leading-relaxed">Design and develop high-performance backend systems using functional programming languages such as Scala. Optimized for low latency and high throughput.</p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Scala</span>
+            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Akka</span>
+            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">ZIO</span>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="group relative p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 card-glow transition-all duration-300" data-animate data-animate-delay="2">
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-violet-500/10 text-violet-400 mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Distributed Systems</h3>
+          <p class="text-slate-400 leading-relaxed">Build scalable, fault-tolerant distributed architectures and microservices for handling high-throughput workloads with resilience.</p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Kafka</span>
+            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">gRPC</span>
+            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Kubernetes</span>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="group relative p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 card-glow transition-all duration-300" data-animate data-animate-delay="3">
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-amber-500/10 text-amber-400 mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Event-Driven Architecture</h3>
+          <p class="text-slate-400 leading-relaxed">Implement real-time, event-driven applications using AWS Kinesis, Lambda, and reactive programming principles for responsive systems.</p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">AWS Kinesis</span>
+            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Lambda</span>
+            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Reactive</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="border-t border-slate-800/60"></div></div>
+
+  <!-- Products Section -->
+  <section id="products" class="relative py-24 md:py-32 overflow-hidden">
+    <!-- Background glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-brand-500/5 rounded-full blur-3xl"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl" data-animate>
+        <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">Our Products</span>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Solutions We're Building</h2>
+        <p class="mt-4 text-lg text-slate-400">Beyond consultancy, we're creating products that solve real problems. Our own web services and mobile applications, built with the same engineering rigor we bring to our clients.</p>
+      </div>
+
+      <div class="mt-16 grid lg:grid-cols-2 gap-6">
+        <!-- Product 1: Web Service -->
+        <div class="relative group p-8 md:p-10 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-900/50 border border-slate-800 hover:border-brand-500/30 card-glow transition-all duration-300" data-animate data-animate-delay="1">
+          <div class="flex items-start justify-between mb-6">
+            <div class="w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500/20 to-violet-500/20 text-brand-400">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+              </svg>
+            </div>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-400/10 text-brand-400 border border-brand-400/20">Coming Soon</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Web Service Platform</h3>
+          <p class="text-slate-400 leading-relaxed mb-6">A new cloud-native web service built on our expertise in distributed systems. Designed to handle complex workflows at scale with reliability and performance.</p>
+          <div class="flex flex-wrap gap-2 mb-8">
+            <span class="text-xs font-medium text-brand-300/80 px-2.5 py-1 rounded-md bg-brand-500/10">Cloud-Native</span>
+            <span class="text-xs font-medium text-brand-300/80 px-2.5 py-1 rounded-md bg-brand-500/10">Scalable</span>
+            <span class="text-xs font-medium text-brand-300/80 px-2.5 py-1 rounded-md bg-brand-500/10">Real-Time</span>
+          </div>
+          <!-- Visual mockup -->
+          <div class="rounded-xl bg-slate-800/50 border border-slate-700/50 p-4 group-hover:border-slate-700 transition-colors">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-2.5 h-2.5 rounded-full bg-red-400/60"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-yellow-400/60"></div>
+              <div class="w-2.5 h-2.5 rounded-full bg-green-400/60"></div>
+              <div class="ml-3 flex-1 h-5 rounded bg-slate-700/50"></div>
+            </div>
+            <div class="space-y-2">
+              <div class="h-3 bg-slate-700/40 rounded w-3/4"></div>
+              <div class="h-3 bg-slate-700/40 rounded w-1/2"></div>
+              <div class="h-3 bg-brand-500/20 rounded w-2/3"></div>
+              <div class="h-3 bg-slate-700/40 rounded w-5/6"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2: Mobile App -->
+        <div class="relative group p-8 md:p-10 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-900/50 border border-slate-800 hover:border-violet-500/30 card-glow transition-all duration-300" data-animate data-animate-delay="2">
+          <div class="flex items-start justify-between mb-6">
+            <div class="w-14 h-14 flex items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500/20 to-pink-500/20 text-violet-400">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-violet-400/10 text-violet-400 border border-violet-400/20">In Development</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Mobile Application</h3>
+          <p class="text-slate-400 leading-relaxed mb-6">A mobile-first experience bringing powerful capabilities to your fingertips. Built with modern cross-platform technology for both iOS and Android.</p>
+          <div class="flex flex-wrap gap-2 mb-8">
+            <span class="text-xs font-medium text-violet-300/80 px-2.5 py-1 rounded-md bg-violet-500/10">iOS</span>
+            <span class="text-xs font-medium text-violet-300/80 px-2.5 py-1 rounded-md bg-violet-500/10">Android</span>
+            <span class="text-xs font-medium text-violet-300/80 px-2.5 py-1 rounded-md bg-violet-500/10">Cross-Platform</span>
+          </div>
+          <!-- Phone mockup -->
+          <div class="flex justify-center">
+            <div class="w-48 rounded-2xl bg-slate-800/50 border border-slate-700/50 p-3 group-hover:border-slate-700 transition-colors">
+              <div class="w-12 h-1 bg-slate-700 rounded-full mx-auto mb-3"></div>
+              <div class="space-y-2">
+                <div class="h-20 bg-gradient-to-br from-violet-500/20 to-brand-500/20 rounded-lg"></div>
+                <div class="h-3 bg-slate-700/40 rounded w-3/4"></div>
+                <div class="h-3 bg-slate-700/40 rounded w-1/2"></div>
+                <div class="grid grid-cols-2 gap-2 pt-1">
+                  <div class="h-12 bg-slate-700/30 rounded-lg"></div>
+                  <div class="h-12 bg-slate-700/30 rounded-lg"></div>
+                </div>
+                <div class="h-3 bg-violet-500/20 rounded w-2/3"></div>
+                <div class="h-3 bg-slate-700/40 rounded w-5/6"></div>
+              </div>
+              <div class="w-8 h-1 bg-slate-700 rounded-full mx-auto mt-3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="border-t border-slate-800/60"></div></div>
+
+  <!-- About Section -->
+  <section id="about" class="relative py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div data-animate>
+          <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">About Us</span>
+          <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Engineering-First<br>Culture</h2>
+          <p class="mt-6 text-lg text-slate-400 leading-relaxed">
+            We are passionate about functional programming, with a strong focus on Scala. Our expertise lies in building distributed, scalable systems and event-driven architectures that power modern applications.
+          </p>
+          <p class="mt-4 text-lg text-slate-400 leading-relaxed">
+            We embrace agile development, continuously delivering and deploying improvements to ensure adaptable and high-quality solutions. Now, we're channeling that same engineering rigor into building our own products.
+          </p>
+          <div class="mt-8 flex items-center gap-4">
+            <a href="https://github.com/hoshiko-tech" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Stats / Highlights -->
+        <div class="grid grid-cols-2 gap-4" data-animate data-animate-delay="2">
+          <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
+            <div class="text-3xl font-bold gradient-text mb-2">FP</div>
+            <p class="text-sm text-slate-400">Functional Programming at the core of everything we build</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
+            <div class="text-3xl font-bold gradient-text mb-2">Scala</div>
+            <p class="text-sm text-slate-400">Deep expertise in the Scala ecosystem and JVM performance</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
+            <div class="text-3xl font-bold gradient-text mb-2">AWS</div>
+            <p class="text-sm text-slate-400">Cloud-native architecture leveraging the full AWS platform</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
+            <div class="text-3xl font-bold gradient-text mb-2">Agile</div>
+            <p class="text-sm text-slate-400">Continuous delivery with rapid iteration and deployment</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="border-t border-slate-800/60"></div></div>
+
+  <!-- Contact Section -->
+  <section id="contact" class="relative py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mx-auto text-center" data-animate>
+        <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">Get in Touch</span>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Let's Build Something Great</h2>
+        <p class="mt-4 text-lg text-slate-400">Have a project in mind? Want to learn more about our services or upcoming products? We'd love to hear from you.</p>
+      </div>
+
+      <div class="mt-12 max-w-xl mx-auto" data-animate data-animate-delay="1">
+        <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800 text-center space-y-6">
+          <div class="w-14 h-14 flex items-center justify-center rounded-2xl bg-brand-500/10 text-brand-400 mx-auto">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm text-slate-400 mb-2">Email us at</p>
+            <a href="mailto:info@hoshiko.tech" class="text-2xl font-semibold text-brand-400 hover:text-brand-300 transition-colors">info@hoshiko.tech</a>
+          </div>
+          <div class="pt-2 flex items-center justify-center gap-4">
+            <a href="https://github.com/hoshiko-tech" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-2 text-sm font-bold">
+          <svg class="w-6 h-6 text-brand-400" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2L26 8V20L14 26L2 20V8L14 2Z" stroke="currentColor" stroke-width="2" fill="none"/>
+            <path d="M14 10L20 13V19L14 22L8 19V13L14 10Z" fill="currentColor" opacity="0.3"/>
+            <circle cx="14" cy="14" r="3" fill="currentColor"/>
+          </svg>
+          <span>Hoshiko Tech Ltd.</span>
+        </div>
+
+        <div class="flex items-center gap-6">
+          <a href="https://github.com/hoshiko-tech" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-white transition-colors" aria-label="GitHub">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+        </div>
+
+        <div class="flex items-center gap-6 text-sm text-slate-500">
+          <a href="legal.html" class="hover:text-slate-300 transition-colors">Privacy Policy</a>
+          <span>&copy; 2026 Hoshiko Tech Ltd.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      if (scrollY > 50) {
+        navbar.classList.add('bg-slate-950/80', 'backdrop-blur-xl', 'border-b', 'border-slate-800/50');
+      } else {
+        navbar.classList.remove('bg-slate-950/80', 'backdrop-blur-xl', 'border-b', 'border-slate-800/50');
+      }
+      lastScroll = scrollY;
+    });
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    let menuOpen = false;
+
+    menuBtn.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.setAttribute('d', menuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16');
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuOpen = false;
+        menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      });
+    });
+
+    // Scroll animation with Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
