@@ -124,7 +124,7 @@
       </div>
 
       <!-- Mobile Nav -->
-      <div id="mobile-menu" class="hidden md:hidden pb-4">
+      <div id="mobile-menu" class="hidden md:hidden pb-4 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800/50 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 pt-2">
         <div class="flex flex-col gap-2">
           <a href="#services" class="text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800/50 transition-colors">Services</a>
           <a href="#products" class="text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800/50 transition-colors">Products</a>
@@ -156,7 +156,7 @@
         </h1>
 
         <p class="mt-6 md:mt-8 text-lg md:text-xl text-slate-400 max-w-2xl leading-relaxed animate-fade-in-up" style="animation-delay: 0.15s">
-          Specializing in high-performance backend infrastructure, distributed systems, and event-driven architecture. From consultancy to products &mdash; we engineer excellence.
+          We design and build software end-to-end, from distributed backends to the interfaces that bring them to life. From consultancy to products, we engineer excellence.
         </p>
 
         <div class="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4 animate-fade-in-up" style="animation-delay: 0.3s">
@@ -172,17 +172,28 @@
 
         <!-- Tech stack indicators -->
         <div class="mt-16 md:mt-20 flex flex-wrap gap-3 animate-fade-in-up" style="animation-delay: 0.45s">
-          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Astro.js</span>
-          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">AWS</span>
-          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Cats Effect</span>
-          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Cloudflare</span>
-          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Docker</span>
-          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Kafka</span>
+          <!-- Languages -->
           <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Kotlin</span>
-          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">React</span>
-          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">React Native</span>
           <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Scala</span>
           <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">TypeScript</span>
+          <!-- Frontend -->
+          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Astro.js</span>
+          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Next.js</span>
+          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">React</span>
+          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">React Native</span>
+          <!-- Backend runtime -->
+          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Node.js</span>
+          <!-- Data & streaming -->
+          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Cassandra</span>
+          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Kafka</span>
+          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">PostgreSQL</span>
+          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Redis</span>
+          <!-- Cloud & infra -->
+          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">AWS</span>
+          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Cloudflare</span>
+          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Docker</span>
+          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Kubernetes</span>
+          <span class="text-xs font-medium text-slate-500 px-3 py-1.5 rounded-md bg-slate-800/50 border border-slate-800">Terraform</span>
         </div>
       </div>
     </div>
@@ -194,10 +205,10 @@
       <div class="max-w-2xl" data-animate>
         <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">What We Do</span>
         <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Expert Software Consultancy</h2>
-        <p class="mt-4 text-lg text-slate-400">We bring deep expertise in functional programming and modern infrastructure to help you build reliable, scalable systems.</p>
+        <p class="mt-4 text-lg text-slate-400">We bring deep expertise across the full stack, from resilient infrastructure to the interfaces your users touch, helping you build reliable, scalable systems that feel fast and effortless to use.</p>
       </div>
 
-      <div class="mt-16 grid md:grid-cols-3 gap-6">
+      <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Service 1 -->
         <div class="group relative p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 card-glow transition-all duration-300" data-animate data-animate-delay="1">
           <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-brand-500/10 text-brand-400 mb-6">
@@ -206,11 +217,10 @@
             </svg>
           </div>
           <h3 class="text-xl font-semibold mb-3">High Performance Backend</h3>
-          <p class="text-slate-400 leading-relaxed">Design and develop high-performance backend systems using functional programming languages such as Scala. Optimized for low latency and high throughput.</p>
+          <p class="text-slate-400 leading-relaxed">Design and develop high-performance backend infrastructure using functional programming languages such as Scala. Services optimized for low latency and high throughput, with the type safety and composability that keep systems maintainable as they scale.</p>
           <div class="mt-6 flex flex-wrap gap-2">
-            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Cats Effect</span>
-            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">fs2</span>
-            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">http4s</span>
+            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">AWS</span>
+            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Kotlin</span>
             <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Scala</span>
           </div>
         </div>
@@ -225,8 +235,10 @@
           <h3 class="text-xl font-semibold mb-3">Distributed Systems</h3>
           <p class="text-slate-400 leading-relaxed">Build scalable, fault-tolerant distributed architectures and microservices for handling high-throughput workloads with resilience.</p>
           <div class="mt-6 flex flex-wrap gap-2">
+            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Cassandra</span>
             <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">DynamoDB</span>
             <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Kafka</span>
+            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Kubernetes</span>
             <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">PostgreSQL</span>
           </div>
         </div>
@@ -241,9 +253,26 @@
           <h3 class="text-xl font-semibold mb-3">Event-Driven Architecture</h3>
           <p class="text-slate-400 leading-relaxed">Implement real-time, event-driven applications using AWS Kinesis, Lambda, and reactive programming principles for responsive systems.</p>
           <div class="mt-6 flex flex-wrap gap-2">
-            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Akka Streams</span>
             <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">AWS Lambda</span>
+            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Kafka</span>
             <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Kinesis</span>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="group relative p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 card-glow transition-all duration-300" data-animate data-animate-delay="4">
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-sky-500/10 text-sky-400 mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25v13.5A2.25 2.25 0 0118.75 21H5.25A2.25 2.25 0 013 18.75V5.25zM3 9h18"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Fast, Focused Frontends</h3>
+          <p class="text-slate-400 leading-relaxed">Build web interfaces that put clarity and responsiveness first. Clean, functional layouts engineered for speed, accessibility, and a frictionless user experience.</p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Astro.js</span>
+            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Next.js</span>
+            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">React</span>
+            <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">TypeScript</span>
           </div>
         </div>
       </div>
@@ -346,43 +375,23 @@
   <!-- About Section -->
   <section id="about" class="relative py-24 md:py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <div data-animate>
+      <div class="max-w-2xl mx-auto" data-animate>
+        <div class="text-center">
           <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">About Us</span>
           <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Engineering-First<br>Culture</h2>
-          <p class="mt-6 text-lg text-slate-400 leading-relaxed">
-            We are passionate about functional programming, with a strong focus on Scala. Our expertise lies in building distributed, scalable systems and event-driven architectures that power modern applications.
-          </p>
-          <p class="mt-4 text-lg text-slate-400 leading-relaxed">
-            We embrace agile development, continuously delivering and deploying improvements to ensure adaptable and high-quality solutions. Now, we're channeling that same engineering rigor into building our own products.
-          </p>
-          <div class="mt-8 flex items-center gap-4">
-            <a href="https://github.com/hoshiko-tech" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white transition-colors">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              GitHub
-            </a>
-          </div>
         </div>
-
-        <!-- Stats / Highlights -->
-        <div class="grid grid-cols-2 gap-4" data-animate data-animate-delay="2">
-          <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
-            <div class="text-3xl font-bold gradient-text mb-2">FP</div>
-            <p class="text-sm text-slate-400">Functional Programming at the core of everything we build</p>
-          </div>
-          <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
-            <div class="text-3xl font-bold gradient-text mb-2">Scala</div>
-            <p class="text-sm text-slate-400">Deep expertise in the Scala ecosystem and JVM performance</p>
-          </div>
-          <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
-            <div class="text-3xl font-bold gradient-text mb-2">AWS</div>
-            <p class="text-sm text-slate-400">Cloud-native architecture leveraging the full AWS platform</p>
-          </div>
-          <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
-            <div class="text-3xl font-bold gradient-text mb-2">Agile</div>
-            <p class="text-sm text-slate-400">Continuous delivery with rapid iteration and deployment</p>
-          </div>
-        </div>
+        <p class="mt-6 text-lg text-slate-400 leading-relaxed">
+          Our roots are in backend engineering, where we lean on functional programming and Scala to build distributed, scalable systems and event-driven architectures. We carry that same discipline across the full stack, shaping every layer we build with a strong emphasis on correctness, performance, and long-term maintainability.
+        </p>
+        <p class="mt-4 text-lg text-slate-400 leading-relaxed">
+          We're challengers at heart: curious about new tools and ideas, and relentless about the quality of what we ship. Good enough isn't the bar; the best we can deliver is.
+        </p>
+        <p class="mt-4 text-lg text-slate-400 leading-relaxed">
+          Modern AI tools are a powerful accelerator in our workflow, meaningfully lifting our delivery speed and code quality. That leverage rests on a solid foundation: years of hands-on engineering experience that turns AI-assisted output into production-ready software.
+        </p>
+        <p class="mt-4 text-lg text-slate-400 leading-relaxed">
+          We embrace agile development, continuously delivering and deploying improvements to ensure adaptable and high-quality solutions. Now, we're channeling that same engineering rigor into building our own products.
+        </p>
       </div>
     </div>
   </section>
@@ -396,7 +405,7 @@
       <div class="max-w-2xl mx-auto text-center" data-animate>
         <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">Get in Touch</span>
         <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Let's Build Something Great</h2>
-        <p class="mt-4 text-lg text-slate-400">Have a project in mind? Want to learn more about our services or upcoming products? We'd love to hear from you.</p>
+        <p class="mt-4 text-lg text-slate-400">Have a project in mind? Need a seasoned developer to reinforce an ongoing team, or someone to bring order to an AI-generated codebase? Want to learn more about our services or upcoming products? We'd love to hear from you.</p>
       </div>
 
       <div class="mt-12 max-w-xl mx-auto" data-animate data-animate-delay="1">
