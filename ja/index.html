@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="ja" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hoshiko Tech Ltd. | Software Consultancy & Products</title>
-  <meta name="description" content="Hoshiko Tech specializes in high-performance backend infrastructure, distributed systems, and event-driven architecture. Software consultancy and product studio.">
+  <title>Hoshiko Tech Ltd. | ソフトウェアコンサルティング & プロダクトスタジオ</title>
+  <meta name="description" content="Hoshiko Techは、高性能なバックエンドインフラ、分散システム、イベント駆動アーキテクチャを専門とするソフトウェアコンサルティング&プロダクトスタジオです。">
   <meta name="author" content="Hoshiko Tech Ltd.">
-  <meta property="og:title" content="Hoshiko Tech Ltd. | Software Consultancy & Products">
-  <meta property="og:description" content="Expert software consultancy specializing in backend infrastructure, distributed systems, and event-driven architecture.">
+  <meta property="og:title" content="Hoshiko Tech Ltd. | ソフトウェアコンサルティング & プロダクトスタジオ">
+  <meta property="og:description" content="バックエンドインフラ、分散システム、イベント駆動アーキテクチャを専門とするソフトウェアコンサルティング。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.hoshiko.tech">
+  <meta property="og:url" content="https://www.hoshiko.tech/ja/">
   <link rel="alternate" hreflang="en" href="https://www.hoshiko.tech/">
   <link rel="alternate" hreflang="ja" href="https://www.hoshiko.tech/ja/">
   <link rel="alternate" hreflang="x-default" href="https://www.hoshiko.tech/">
-  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            sans: ['Inter', 'Noto Sans JP', 'system-ui', '-apple-system', 'sans-serif'],
           },
           colors: {
             brand: {
@@ -61,9 +61,9 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    body { font-family: 'Inter', 'Noto Sans JP', system-ui, -apple-system, sans-serif; }
     .gradient-text {
       background: linear-gradient(135deg, #22d3ee 0%, #818cf8 50%, #c084fc 100%);
       -webkit-background-clip: text;
@@ -104,23 +104,23 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 md:h-20">
         <a href="#" class="flex items-center gap-2.5 text-lg font-bold tracking-tight">
-          <img src="logo.svg" alt="Hoshiko Tech" class="h-8 w-8">
+          <img src="/logo.svg" alt="Hoshiko Tech" class="h-8 w-8">
           <span>Hoshiko Tech</span>
         </a>
 
         <!-- Desktop Nav -->
         <div class="hidden md:flex items-center gap-8">
-          <a href="#services" class="text-sm text-slate-300 hover:text-white transition-colors">Services</a>
-          <a href="#products" class="text-sm text-slate-300 hover:text-white transition-colors">Products</a>
-          <a href="#about" class="text-sm text-slate-300 hover:text-white transition-colors">About</a>
-          <a href="/ja/" hreflang="ja" class="text-sm text-slate-400 hover:text-white transition-colors" aria-label="日本語に切り替え">日本語</a>
+          <a href="#services" class="text-sm text-slate-300 hover:text-white transition-colors">サービス</a>
+          <a href="#products" class="text-sm text-slate-300 hover:text-white transition-colors">プロダクト</a>
+          <a href="#about" class="text-sm text-slate-300 hover:text-white transition-colors">会社概要</a>
+          <a href="/" hreflang="en" class="text-sm text-slate-400 hover:text-white transition-colors" aria-label="Switch to English">EN</a>
           <a href="#contact" class="inline-flex items-center gap-2 text-sm font-medium px-5 py-2.5 rounded-lg bg-brand-500 hover:bg-brand-400 text-slate-950 transition-colors">
-            Contact Us
+            お問い合わせ
           </a>
         </div>
 
         <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white" aria-label="Toggle menu">
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white" aria-label="メニュー切り替え">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
@@ -130,11 +130,11 @@
       <!-- Mobile Nav -->
       <div id="mobile-menu" class="hidden md:hidden pb-4 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800/50 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 pt-2">
         <div class="flex flex-col gap-2">
-          <a href="#services" class="text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800/50 transition-colors">Services</a>
-          <a href="#products" class="text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800/50 transition-colors">Products</a>
-          <a href="#about" class="text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800/50 transition-colors">About</a>
-          <a href="/ja/" hreflang="ja" class="text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800/50 transition-colors">日本語</a>
-          <a href="#contact" class="text-sm font-medium px-3 py-2 rounded-lg bg-brand-500 hover:bg-brand-400 text-slate-950 text-center transition-colors">Contact Us</a>
+          <a href="#services" class="text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800/50 transition-colors">サービス</a>
+          <a href="#products" class="text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800/50 transition-colors">プロダクト</a>
+          <a href="#about" class="text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800/50 transition-colors">会社概要</a>
+          <a href="/" hreflang="en" class="text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800/50 transition-colors">EN</a>
+          <a href="#contact" class="text-sm font-medium px-3 py-2 rounded-lg bg-brand-500 hover:bg-brand-400 text-slate-950 text-center transition-colors">お問い合わせ</a>
         </div>
       </div>
     </div>
@@ -151,26 +151,26 @@
         <div class="animate-fade-in">
           <span class="inline-flex items-center gap-2 text-sm font-medium text-brand-400 mb-6 px-3 py-1 rounded-full border border-brand-400/20 bg-brand-400/5">
             <span class="w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse"></span>
-            Software Consultancy & Product Studio
+            ソフトウェアコンサルティング & プロダクトスタジオ
           </span>
         </div>
 
         <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] animate-fade-in-up">
-          We Build Systems<br>
-          <span class="gradient-text">That Scale</span>
+          スケールする<br>
+          <span class="gradient-text">システムを</span>
         </h1>
 
         <p class="mt-6 md:mt-8 text-lg md:text-xl text-slate-400 max-w-2xl leading-relaxed animate-fade-in-up" style="animation-delay: 0.15s">
-          We design and build software end-to-end, from distributed backends to the interfaces that bring them to life. From consultancy to products, we engineer excellence.
+          分散バックエンドから、ユーザーに届くインターフェースまで。ソフトウェアをエンドツーエンドで設計・構築します。コンサルティングから自社プロダクトまで、本質的なエンジニアリングをお届けします。
         </p>
 
         <div class="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4 animate-fade-in-up" style="animation-delay: 0.3s">
           <a href="#services" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-brand-500 hover:bg-brand-400 text-slate-950 font-semibold transition-all hover:shadow-lg hover:shadow-brand-500/25">
-            Explore Services
+            サービスを見る
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </a>
           <a href="#products" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg border border-slate-700 hover:border-slate-500 text-white font-semibold transition-all hover:bg-slate-800/50">
-            View Products
+            プロダクトを見る
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
         </div>
@@ -208,9 +208,9 @@
   <section id="services" class="relative py-24 md:py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl" data-animate>
-        <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">What We Do</span>
-        <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Expert Software Consultancy</h2>
-        <p class="mt-4 text-lg text-slate-400">We bring deep expertise across the full stack, from resilient infrastructure to the interfaces your users touch, helping you build reliable, scalable systems that feel fast and effortless to use.</p>
+        <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">事業内容</span>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">ソフトウェア開発の専門家</h2>
+        <p class="mt-4 text-lg text-slate-400">信頼性とスケーラビリティを備えたインフラから、スムーズなUIまで。フルスタックでシステムを構築します。</p>
       </div>
 
       <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -221,8 +221,8 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-3">High Performance Backend</h3>
-          <p class="text-slate-400 leading-relaxed">Design and develop high-performance backend infrastructure using functional programming languages such as Scala. Services optimized for low latency and high throughput, with the type safety and composability that keep systems maintainable as they scale.</p>
+          <h3 class="text-xl font-semibold mb-3">高性能バックエンド</h3>
+          <p class="text-slate-400 leading-relaxed">Scalaなどの関数型プログラミング言語を使用し、高性能なバックエンドインフラを設計、開発します。低レイテンシー、高スループットに最適化したサービスを、型安全性とコンポーザビリティによって実現。スケール後も高い保守性を維持します。</p>
           <div class="mt-6 flex flex-wrap gap-2">
             <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">AWS</span>
             <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Kotlin</span>
@@ -237,8 +237,8 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-3">Distributed Systems</h3>
-          <p class="text-slate-400 leading-relaxed">Build scalable, fault-tolerant distributed architectures and microservices for handling high-throughput workloads with resilience.</p>
+          <h3 class="text-xl font-semibold mb-3">分散システム</h3>
+          <p class="text-slate-400 leading-relaxed">マイクロサービスを活用した、スケーラブルで耐障害性の高い分散アーキテクチャを構築。高スループットなワークロードを安定して処理します。</p>
           <div class="mt-6 flex flex-wrap gap-2">
             <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Cassandra</span>
             <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">DynamoDB</span>
@@ -255,8 +255,8 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-3">Event-Driven Architecture</h3>
-          <p class="text-slate-400 leading-relaxed">Implement real-time, event-driven applications using AWS Kinesis, Lambda, and reactive programming principles for responsive systems.</p>
+          <h3 class="text-xl font-semibold mb-3">イベント駆動アーキテクチャ</h3>
+          <p class="text-slate-400 leading-relaxed">Amazon KinesisやAWS Lambdaを採用し、リアクティブな設計思想を導入。リアルタイムで応答性の高い、高パフォーマンスなアプリケーションを実装します。</p>
           <div class="mt-6 flex flex-wrap gap-2">
             <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">AWS Lambda</span>
             <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Kafka</span>
@@ -271,8 +271,8 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25v13.5A2.25 2.25 0 0118.75 21H5.25A2.25 2.25 0 013 18.75V5.25zM3 9h18"/>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold mb-3">Fast, Focused Frontends</h3>
-          <p class="text-slate-400 leading-relaxed">Build web interfaces that put clarity and responsiveness first. Clean, functional layouts engineered for speed, accessibility, and a frictionless user experience.</p>
+          <h3 class="text-xl font-semibold mb-3">高速で洗練されたフロントエンド</h3>
+          <p class="text-slate-400 leading-relaxed">直感的な操作性と優れた応答性を最優先に、Webインターフェースを構築。パフォーマンス、アクセシビリティ、そしてストレスフリーなユーザー体験（UX）を重視した、シンプルで機能的なレイアウトを設計します。</p>
           <div class="mt-6 flex flex-wrap gap-2">
             <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Astro.js</span>
             <span class="text-xs text-slate-500 px-2 py-1 rounded bg-slate-800/80">Next.js</span>
@@ -294,9 +294,9 @@
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl" data-animate>
-        <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">Our Products</span>
-        <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Solutions We're Building</h2>
-        <p class="mt-4 text-lg text-slate-400">Beyond consultancy, we're creating products that solve real problems. Our own web services and mobile applications, built with the same engineering rigor we bring to our clients.</p>
+        <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">自社プロダクト</span>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">開発中のソリューション</h2>
+        <p class="mt-4 text-lg text-slate-400">コンサルティングにとどまらず、現実の課題を解決するためのプロダクトを自社でも開発しています。クライアントに提供しているものと同等の高いエンジニアリング水準で、Webサービスやモバイルアプリケーションを構築しています。</p>
       </div>
 
       <div class="mt-16 grid lg:grid-cols-2 gap-6">
@@ -308,14 +308,14 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
               </svg>
             </div>
-            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-400/10 text-brand-400 border border-brand-400/20">Coming Soon</span>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-400/10 text-brand-400 border border-brand-400/20">公開準備中</span>
           </div>
-          <h3 class="text-2xl font-bold mb-3">Web Service Platform</h3>
-          <p class="text-slate-400 leading-relaxed mb-6">A new cloud-native web service built on our expertise in distributed systems. Designed to handle complex workflows at scale with reliability and performance.</p>
+          <h3 class="text-2xl font-bold mb-3">Webサービスプラットフォーム</h3>
+          <p class="text-slate-400 leading-relaxed mb-6">分散システムでの経験を活かして開発する、新しいクラウドネイティブなWebサービス。複雑なワークフローを大規模に、信頼性とパフォーマンスを両立しながら処理できるよう設計しています。</p>
           <div class="flex flex-wrap gap-2 mb-8">
-            <span class="text-xs font-medium text-brand-300/80 px-2.5 py-1 rounded-md bg-brand-500/10">Cloud-Native</span>
-            <span class="text-xs font-medium text-brand-300/80 px-2.5 py-1 rounded-md bg-brand-500/10">Scalable</span>
-            <span class="text-xs font-medium text-brand-300/80 px-2.5 py-1 rounded-md bg-brand-500/10">Real-Time</span>
+            <span class="text-xs font-medium text-brand-300/80 px-2.5 py-1 rounded-md bg-brand-500/10">クラウドネイティブ</span>
+            <span class="text-xs font-medium text-brand-300/80 px-2.5 py-1 rounded-md bg-brand-500/10">スケーラブル</span>
+            <span class="text-xs font-medium text-brand-300/80 px-2.5 py-1 rounded-md bg-brand-500/10">リアルタイム</span>
           </div>
           <!-- Visual mockup -->
           <div class="rounded-xl bg-slate-800/50 border border-slate-700/50 p-4 group-hover:border-slate-700 transition-colors">
@@ -342,14 +342,14 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
               </svg>
             </div>
-            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-violet-400/10 text-violet-400 border border-violet-400/20">In Development</span>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-violet-400/10 text-violet-400 border border-violet-400/20">開発中</span>
           </div>
-          <h3 class="text-2xl font-bold mb-3">Mobile Application</h3>
-          <p class="text-slate-400 leading-relaxed mb-6">A mobile-first experience bringing powerful capabilities to your fingertips. Built with modern cross-platform technology for both iOS and Android.</p>
+          <h3 class="text-2xl font-bold mb-3">モバイルアプリケーション</h3>
+          <p class="text-slate-400 leading-relaxed mb-6">強力な機能を手のひらの中に届ける、モバイルファーストな体験。モダンなクロスプラットフォーム技術で、iOSとAndroidの両方に対応します。</p>
           <div class="flex flex-wrap gap-2 mb-8">
             <span class="text-xs font-medium text-violet-300/80 px-2.5 py-1 rounded-md bg-violet-500/10">iOS</span>
             <span class="text-xs font-medium text-violet-300/80 px-2.5 py-1 rounded-md bg-violet-500/10">Android</span>
-            <span class="text-xs font-medium text-violet-300/80 px-2.5 py-1 rounded-md bg-violet-500/10">Cross-Platform</span>
+            <span class="text-xs font-medium text-violet-300/80 px-2.5 py-1 rounded-md bg-violet-500/10">クロスプラットフォーム</span>
           </div>
           <!-- Phone mockup -->
           <div class="flex justify-center">
@@ -382,20 +382,20 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl mx-auto" data-animate>
         <div class="text-center">
-          <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">About Us</span>
-          <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Engineering-First<br>Culture</h2>
+          <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">会社概要</span>
+          <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">エンジニアリング<br>第一の文化</h2>
         </div>
         <p class="mt-6 text-lg text-slate-400 leading-relaxed">
-          Our roots are in backend engineering, where we lean on functional programming and Scala to build distributed, scalable systems and event-driven architectures. We carry that same discipline across the full stack, shaping every layer we build with a strong emphasis on correctness, performance, and long-term maintainability.
+          私たちのルーツは、バックエンドエンジニアリングにあります。関数型プログラミングとScalaを軸に、分散・スケーラブルなシステムやイベント駆動型アーキテクチャを構築してきました。その厳格な設計思想をフルスタック全体へと展開し、正確性、パフォーマンス、そして長期的な保守性を徹底的に追求しています。
         </p>
         <p class="mt-4 text-lg text-slate-400 leading-relaxed">
-          We're challengers at heart: curious about new tools and ideas, and relentless about the quality of what we ship. Good enough isn't the bar; the best we can deliver is.
+          私たちは、常に挑戦者であり続けます。新しいツールやアイデアへの好奇心を絶やさず、プロダクトの品質には一切妥協しません。「そこそこの完成度」で満足することなく、自分たちが届けられる最高のクオリティを基準にしています。
         </p>
         <p class="mt-4 text-lg text-slate-400 leading-relaxed">
-          Modern AI tools are a powerful accelerator in our workflow, meaningfully lifting our delivery speed and code quality. That leverage rests on a solid foundation: years of hands-on engineering experience that turns AI-assisted output into production-ready software.
+          また、モダンなAIツールをワークフローに組み込むことで、開発スピードとコード品質を飛躍的に向上させています。この進化を支えているのは、長年の実装経験という確かな土台です。AIのポテンシャルを最大限に活かしつつ、本番運用に耐えうる堅牢なソフトウェアへと昇華させます。
         </p>
         <p class="mt-4 text-lg text-slate-400 leading-relaxed">
-          We embrace agile development, continuously delivering and deploying improvements to ensure adaptable and high-quality solutions. Now, we're channeling that same engineering rigor into building our own products.
+          アジャイル開発を実践し、継続的な改善をデリバリー・デプロイし続けることで、変化に適応しながら価値を提供します。そして今、これまで培ってきたエンジニアリングの規律を、自社プロダクトの開発へと注ぎ込んでいます。
         </p>
       </div>
     </div>
@@ -408,9 +408,9 @@
   <section id="contact" class="relative py-24 md:py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl mx-auto text-center" data-animate>
-        <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">Get in Touch</span>
-        <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Let's Build Something Great</h2>
-        <p class="mt-4 text-lg text-slate-400">Have a project in mind? Need a seasoned developer to reinforce an ongoing team, or someone to bring order to an AI-generated codebase? Want to learn more about our services or upcoming products? We'd love to hear from you.</p>
+        <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">お問い合わせ</span>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">ともに、素晴らしいものを。</h2>
+        <p class="mt-4 text-lg text-slate-400">新たなプロジェクトの構想はありますか？ 進行中のチームを強力にサポートする、経験豊富な開発者をお探しでしょうか。あるいは、AIによって肥大化したコードベースを整理し、洗練させる人材が必要かもしれません。 私たちのサービスや、現在開発中のプロダクトに興味を持っていただけた方も、ぜひお気軽にご連絡ください。どのようなご相談でも、心よりお待ちしています。</p>
       </div>
 
       <div class="mt-12 max-w-xl mx-auto" data-animate data-animate-delay="1">
@@ -421,7 +421,7 @@
             </svg>
           </div>
           <div>
-            <p class="text-sm text-slate-400 mb-2">Email us at</p>
+            <p class="text-sm text-slate-400 mb-2">メールはこちらまで</p>
             <a href="mailto:info@hoshiko.tech" class="text-2xl font-semibold text-brand-400 hover:text-brand-300 transition-colors">info@hoshiko.tech</a>
           </div>
           <div class="pt-2 flex items-center justify-center gap-4">
@@ -440,7 +440,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex items-center gap-2.5 text-sm font-bold">
-          <img src="logo.svg" alt="Hoshiko Tech" class="h-7 w-7">
+          <img src="/logo.svg" alt="Hoshiko Tech" class="h-7 w-7">
           <span>Hoshiko Tech Ltd.</span>
         </div>
 
@@ -451,7 +451,7 @@
         </div>
 
         <div class="flex items-center gap-6 text-sm text-slate-500">
-          <a href="legal.html" class="hover:text-slate-300 transition-colors">Privacy Policy</a>
+          <a href="legal.html" class="hover:text-slate-300 transition-colors">プライバシーポリシー</a>
           <span>&copy; 2026 Hoshiko Tech Ltd.</span>
         </div>
       </div>
