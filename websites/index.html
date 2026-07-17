@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Websites by Hoshiko Tech | Static, Multi-Page & Backend Sites</title>
+  <meta name="description" content="Simple, fast, well-built websites for small businesses and individuals. Three clear tiers: single-page static sites, multi-page websites, and sites with a backend or database.">
+  <meta name="author" content="Hoshiko Tech Ltd.">
+  <meta property="og:title" content="Simple Websites by Hoshiko Tech">
+  <meta property="og:description" content="Simple, fast, well-built websites — from a single landing page to a full site with a backend and database.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.hoshiko.tech/websites/">
+  <link rel="alternate" hreflang="en" href="https://www.hoshiko.tech/websites/">
+  <link rel="alternate" hreflang="ja" href="https://www.hoshiko.tech/ja/websites/">
+  <link rel="alternate" hreflang="x-default" href="https://www.hoshiko.tech/websites/">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63',
+            }
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.6s ease-out forwards',
+            'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(24px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    .gradient-text {
+      background: linear-gradient(135deg, #22d3ee 0%, #818cf8 50%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-glow {
+      background: radial-gradient(ellipse 80% 60% at 50% -20%, rgba(6, 182, 212, 0.15), transparent);
+    }
+    .card-glow:hover {
+      box-shadow: 0 0 40px rgba(6, 182, 212, 0.08);
+    }
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    [data-animate].visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    [data-animate-delay="1"] { transition-delay: 0.1s; }
+    [data-animate-delay="2"] { transition-delay: 0.2s; }
+    [data-animate-delay="3"] { transition-delay: 0.3s; }
+    [data-animate-delay="4"] { transition-delay: 0.4s; }
+  </style>
+</head>
+<body id="top" class="bg-slate-950 text-white antialiased">
+
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="#top" class="flex items-center gap-2.5 text-lg font-bold tracking-tight">
+          <img src="/logo.svg" alt="Hoshiko Tech" class="h-8 w-8">
+          <span>Hoshiko Tech</span>
+          <span class="text-xs font-medium px-2 py-0.5 rounded-md bg-brand-500/10 text-brand-400 border border-brand-500/20">Websites</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#pricing" class="text-sm text-slate-300 hover:text-white transition-colors">Pricing</a>
+          <a href="#process" class="text-sm text-slate-300 hover:text-white transition-colors">Process</a>
+          <a href="#faq" class="text-sm text-slate-300 hover:text-white transition-colors">FAQ</a>
+          <a href="/ja/websites/" hreflang="ja" class="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:text-white hover:border-slate-500 hover:bg-slate-800/50 transition-all" aria-label="日本語に切り替え">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+            日本語
+          </a>
+          <a href="#contact" class="inline-flex items-center gap-2 text-sm font-medium px-5 py-2.5 rounded-lg bg-brand-500 hover:bg-brand-400 text-slate-950 transition-colors">
+            Get a quote
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800/50 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 pt-2">
+        <div class="flex flex-col gap-2">
+          <a href="#pricing" class="text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800/50 transition-colors">Pricing</a>
+          <a href="#process" class="text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800/50 transition-colors">Process</a>
+          <a href="#faq" class="text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800/50 transition-colors">FAQ</a>
+          <a href="/ja/websites/" hreflang="ja" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg border border-slate-700 hover:bg-slate-800/50 transition-colors w-fit">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+            日本語
+          </a>
+          <a href="#contact" class="text-sm font-medium px-3 py-2 rounded-lg bg-brand-500 hover:bg-brand-400 text-slate-950 text-center transition-colors">Get a quote</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center hero-glow grid-bg overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-32">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-800 bg-slate-900/50 text-sm text-slate-300 mb-8" data-animate>
+          <span class="w-2 h-2 rounded-full bg-brand-400"></span>
+          A small-project service from Hoshiko Tech
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]" data-animate data-animate-delay="1">
+          Simple websites,<br>
+          <span class="gradient-text">built properly.</span>
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-slate-400 max-w-2xl" data-animate data-animate-delay="2">
+          Fast, clean, and reliable websites for small businesses and individuals — from a single
+          landing page to a full site with a backend and database. Built by an engineer who does
+          this for a living, at a friendly side-project price.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4" data-animate data-animate-delay="3">
+          <a href="#contact" class="inline-flex items-center gap-2 text-base font-medium px-7 py-3.5 rounded-lg bg-brand-500 hover:bg-brand-400 text-slate-950 transition-colors">
+            Get a quote
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+          <a href="#pricing" class="inline-flex items-center gap-2 text-base font-medium px-7 py-3.5 rounded-lg border border-slate-700 text-slate-200 hover:border-slate-500 hover:bg-slate-800/50 transition-all">
+            See pricing
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="relative py-24 md:py-32 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl" data-animate>
+        <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">Pricing</span>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Three simple tiers</h2>
+        <p class="mt-4 text-lg text-slate-400">Pick the level that fits your project. Not sure which one? Send a message and I'll point you to the right fit — no pressure.</p>
+      </div>
+
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+
+        <!-- Tier 1 -->
+        <div class="group relative p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 card-glow transition-all duration-300" data-animate data-animate-delay="1">
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-brand-500/10 text-brand-400 mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold">Simple Static Site</h3>
+          <p class="mt-2 text-sm text-slate-400">Perfect for a landing page, portfolio, or a small business that needs a clean online presence.</p>
+          <div class="mt-6 flex items-baseline gap-1.5">
+            <span class="text-3xl font-bold">from &pound;PLACEHOLDER</span>
+          </div>
+          <p class="mt-1 text-sm text-slate-500">Typical delivery ~PLACEHOLDER&nbsp;days</p>
+          <a href="#contact" class="mt-6 inline-flex w-full items-center justify-center gap-2 text-sm font-medium px-5 py-2.5 rounded-lg border border-slate-700 text-slate-200 hover:border-slate-500 hover:bg-slate-800/50 transition-all">Get started</a>
+          <ul class="mt-8 space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>One-page / single landing page</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Mobile-responsive design</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Contact button / email link</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Basic SEO &amp; fast load times</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Deploy to your domain</li>
+          </ul>
+          <p class="mt-6 text-xs text-slate-500">Tech: static HTML/CSS, hosted on fast static hosting.</p>
+        </div>
+
+        <!-- Tier 2 (Most popular) -->
+        <div class="group relative p-8 rounded-2xl bg-slate-900/50 border border-brand-500/50 ring-1 ring-brand-500/20 card-glow transition-all duration-300 md:-mt-4 md:mb-4" data-animate data-animate-delay="2">
+          <span class="absolute -top-3 left-8 text-xs font-semibold px-3 py-1 rounded-full bg-brand-500 text-slate-950">Most popular</span>
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-brand-500/10 text-brand-400 mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold">Multi-Page Website</h3>
+          <p class="mt-2 text-sm text-slate-400">For businesses that need several pages — services, about, blog or gallery — with proper navigation.</p>
+          <div class="mt-6 flex items-baseline gap-1.5">
+            <span class="text-3xl font-bold">from &pound;PLACEHOLDER</span>
+          </div>
+          <p class="mt-1 text-sm text-slate-500">Typical delivery ~PLACEHOLDER&nbsp;days</p>
+          <a href="#contact" class="mt-6 inline-flex w-full items-center justify-center gap-2 text-sm font-medium px-5 py-2.5 rounded-lg bg-brand-500 hover:bg-brand-400 text-slate-950 transition-colors">Get started</a>
+          <ul class="mt-8 space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Everything in <span class="text-slate-200 font-medium">Simple Static Site</span></span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Several pages with navigation</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Blog or gallery (optional)</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Editable content you can update</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Contact form (via a form service)</li>
+          </ul>
+          <p class="mt-6 text-xs text-slate-500">Tech: static site generator or lightweight CMS.</p>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="group relative p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 card-glow transition-all duration-300" data-animate data-animate-delay="3">
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-brand-500/10 text-brand-400 mb-6">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2 1.5 3 4 3s4-1 4-3V7M4 7c0 2 1.5 3 4 3s4-1 4-3M4 7c0-2 1.5-3 4-3s4 1 4 3m0 10c0 2 1.5 3 4 3s4-1 4-3V7m-8 10V7m8 0c0 2-1.5 3-4 3s-4-1-4-3m8 0c0-2-1.5-3-4-3s-4 1-4 3"/></svg>
+          </div>
+          <h3 class="text-xl font-bold">Website + Backend</h3>
+          <p class="mt-2 text-sm text-slate-400">When you need real functionality — accounts, bookings, a database, or connections to other services.</p>
+          <div class="mt-6 flex items-baseline gap-1.5">
+            <span class="text-3xl font-bold">from &pound;PLACEHOLDER</span>
+          </div>
+          <p class="mt-1 text-sm text-slate-500">Typical delivery ~PLACEHOLDER&nbsp;days</p>
+          <a href="#contact" class="mt-6 inline-flex w-full items-center justify-center gap-2 text-sm font-medium px-5 py-2.5 rounded-lg border border-slate-700 text-slate-200 hover:border-slate-500 hover:bg-slate-800/50 transition-all">Get started</a>
+          <ul class="mt-8 space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Everything in <span class="text-slate-200 font-medium">Multi-Page Website</span></span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Database-backed content</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Forms, logins &amp; bookings</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>API &amp; third-party integrations</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Scales to real traffic</li>
+          </ul>
+          <p class="mt-6 text-xs text-slate-500">Tech: a small backend server and database, built to last.</p>
+        </div>
+
+      </div>
+      <p class="mt-8 text-sm text-slate-500" data-animate>Prices shown are placeholders — final quotes depend on scope. Hosting and domain costs are billed separately at cost.</p>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section id="process" class="relative py-24 md:py-32 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl" data-animate>
+        <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">How it works</span>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Simple, from start to launch</h2>
+        <p class="mt-4 text-lg text-slate-400">No jargon, no drawn-out process. Here's what working together looks like.</p>
+      </div>
+
+      <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800" data-animate data-animate-delay="1">
+          <span class="text-sm font-bold text-brand-400">01</span>
+          <h3 class="mt-3 text-lg font-semibold">Talk</h3>
+          <p class="mt-2 text-sm text-slate-400">Tell me what you need. We agree on the tier, scope, and a fixed price up front.</p>
+        </div>
+        <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800" data-animate data-animate-delay="2">
+          <span class="text-sm font-bold text-brand-400">02</span>
+          <h3 class="mt-3 text-lg font-semibold">Design</h3>
+          <p class="mt-2 text-sm text-slate-400">I put together a clean layout and share a preview so you can give feedback early.</p>
+        </div>
+        <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800" data-animate data-animate-delay="3">
+          <span class="text-sm font-bold text-brand-400">03</span>
+          <h3 class="mt-3 text-lg font-semibold">Build</h3>
+          <p class="mt-2 text-sm text-slate-400">I build it properly, test it on real devices, and fold in a round of revisions.</p>
+        </div>
+        <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800" data-animate data-animate-delay="4">
+          <span class="text-sm font-bold text-brand-400">04</span>
+          <h3 class="mt-3 text-lg font-semibold">Launch</h3>
+          <p class="mt-2 text-sm text-slate-400">We go live on your domain. You own everything — code, content, and accounts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="relative py-24 md:py-32 border-t border-slate-800/60">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center" data-animate>
+        <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">FAQ</span>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Good questions</h2>
+      </div>
+
+      <div class="mt-12 space-y-4">
+        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800" data-animate data-animate-delay="1">
+          <h3 class="text-lg font-semibold">How long does a site take?</h3>
+          <p class="mt-2 text-slate-400">A simple static site is usually days, not weeks. Larger multi-page and backend projects take longer — I'll give you a realistic timeline before we start.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800" data-animate data-animate-delay="1">
+          <h3 class="text-lg font-semibold">Do I own the website?</h3>
+          <p class="mt-2 text-slate-400">Yes — completely. You own the code, the content, and all the accounts. Nothing is locked to me, and you're free to take it elsewhere anytime.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800" data-animate data-animate-delay="1">
+          <h3 class="text-lg font-semibold">What about hosting and domains?</h3>
+          <p class="mt-2 text-slate-400">I'll set everything up and can recommend affordable options. Hosting and domain fees are paid directly by you, at cost — no markup.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800" data-animate data-animate-delay="1">
+          <h3 class="text-lg font-semibold">Can you maintain it afterwards?</h3>
+          <p class="mt-2 text-slate-400">Yes. I can handle updates and small changes on an as-needed basis, or set you up so you can edit content yourself.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800" data-animate data-animate-delay="1">
+          <h3 class="text-lg font-semibold">Is this the same as Hoshiko Tech's consultancy?</h3>
+          <p class="mt-2 text-slate-400">It's a smaller, more affordable service run alongside it — same engineering standards, scoped for simple websites and side-project budgets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="relative py-24 md:py-32 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mx-auto text-center" data-animate>
+        <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">Get in Touch</span>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Let's build your website</h2>
+        <p class="mt-4 text-lg text-slate-400">Tell me a little about your project — what it's for and roughly what you have in mind. I'll reply with a recommended tier and a quote. No obligation.</p>
+      </div>
+
+      <div class="mt-12 max-w-xl mx-auto" data-animate data-animate-delay="1">
+        <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800 text-center space-y-6">
+          <div class="w-14 h-14 flex items-center justify-center rounded-2xl bg-brand-500/10 text-brand-400 mx-auto">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm text-slate-400 mb-2">Email me at</p>
+            <a href="mailto:info@hoshiko.tech?subject=Website%20enquiry" class="text-2xl font-semibold text-brand-400 hover:text-brand-300 transition-colors">info@hoshiko.tech</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-2.5 text-sm font-bold">
+          <img src="/logo.svg" alt="Hoshiko Tech" class="h-7 w-7">
+          <span>Hoshiko Tech Ltd.</span>
+        </div>
+
+        <div class="flex items-center gap-6 text-sm text-slate-500">
+          <a href="/" class="hover:text-slate-300 transition-colors">Hoshiko Tech home</a>
+          <a href="/legal.html" class="hover:text-slate-300 transition-colors">Privacy Policy</a>
+          <span>&copy; 2026 Hoshiko Tech Ltd.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      if (scrollY > 50) {
+        navbar.classList.add('bg-slate-950/80', 'backdrop-blur-xl', 'border-b', 'border-slate-800/50');
+      } else {
+        navbar.classList.remove('bg-slate-950/80', 'backdrop-blur-xl', 'border-b', 'border-slate-800/50');
+      }
+      lastScroll = scrollY;
+    });
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    let menuOpen = false;
+
+    menuBtn.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.setAttribute('d', menuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16');
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuOpen = false;
+        menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      });
+    });
+
+    // Scroll animation with Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
