@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>シンプルなウェブ制作 by Hoshiko Tech | 小規模ビジネス・個人向けの速くきれいなサイト</title>
+  <meta name="description" content="小規模ビジネスや個人向けの、シンプルで速く、しっかり作られたウェブサイト。1ページのサイトから、オンライン予約や会員登録などに対応する本格的なサイトまで、明快な3つのプランをご用意しています。">
+  <meta name="author" content="Hoshiko Tech Ltd.">
+  <meta property="og:title" content="シンプルなウェブ制作 by Hoshiko Tech">
+  <meta property="og:description" content="シンプルで速く、しっかり作られたウェブサイト。1ページのシンプルなサイトから、オンライン予約や会員機能に対応する本格的なサイトまで。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.hoshiko.tech/ja/websites/">
+  <link rel="alternate" hreflang="en" href="https://www.hoshiko.tech/websites/">
+  <link rel="alternate" hreflang="ja" href="https://www.hoshiko.tech/ja/websites/">
+  <link rel="alternate" hreflang="x-default" href="https://www.hoshiko.tech/websites/">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans JP', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63',
+            }
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.6s ease-out forwards',
+            'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(24px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', 'Noto Sans JP', system-ui, -apple-system, sans-serif; }
+    .gradient-text {
+      background: linear-gradient(135deg, #22d3ee 0%, #818cf8 50%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-glow {
+      background: radial-gradient(ellipse 80% 60% at 50% -20%, rgba(6, 182, 212, 0.15), transparent);
+    }
+    .card-glow:hover {
+      box-shadow: 0 0 40px rgba(6, 182, 212, 0.08);
+    }
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    [data-animate].visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    [data-animate-delay="1"] { transition-delay: 0.1s; }
+    [data-animate-delay="2"] { transition-delay: 0.2s; }
+    [data-animate-delay="3"] { transition-delay: 0.3s; }
+    [data-animate-delay="4"] { transition-delay: 0.4s; }
+  </style>
+</head>
+<body id="top" class="bg-slate-950 text-white antialiased">
+
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a href="#top" class="flex items-center gap-2.5 text-lg font-bold tracking-tight">
+          <img src="/logo.svg" alt="Hoshiko Tech" class="h-8 w-8">
+          <span>Hoshiko Tech</span>
+          <span class="text-xs font-medium px-2 py-0.5 rounded-md bg-brand-500/10 text-brand-400 border border-brand-500/20">ウェブ制作</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#pricing" class="text-sm text-slate-300 hover:text-white transition-colors">料金</a>
+          <a href="#process" class="text-sm text-slate-300 hover:text-white transition-colors">進め方</a>
+          <a href="#faq" class="text-sm text-slate-300 hover:text-white transition-colors">よくある質問</a>
+          <a href="/websites/" hreflang="en" class="inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:text-white hover:border-slate-500 hover:bg-slate-800/50 transition-all" aria-label="Switch to English">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+            EN
+          </a>
+          <a href="#contact" class="inline-flex items-center gap-2 text-sm font-medium px-5 py-2.5 rounded-lg bg-brand-500 hover:bg-brand-400 text-slate-950 transition-colors">
+            見積もり依頼
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white" aria-label="メニューを開く">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div id="mobile-menu" class="hidden md:hidden pb-4 bg-slate-950/95 backdrop-blur-xl border-b border-slate-800/50 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 pt-2">
+        <div class="flex flex-col gap-2">
+          <a href="#pricing" class="text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800/50 transition-colors">料金</a>
+          <a href="#process" class="text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800/50 transition-colors">進め方</a>
+          <a href="#faq" class="text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800/50 transition-colors">よくある質問</a>
+          <a href="/websites/" hreflang="en" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white px-3 py-2 rounded-lg border border-slate-700 hover:bg-slate-800/50 transition-colors w-fit">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+            EN
+          </a>
+          <a href="#contact" class="text-sm font-medium px-3 py-2 rounded-lg bg-brand-500 hover:bg-brand-400 text-slate-950 text-center transition-colors">見積もり依頼</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center hero-glow grid-bg overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-32">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-slate-800 bg-slate-900/50 text-sm text-slate-300 mb-8" data-animate>
+          <span class="w-2 h-2 rounded-full bg-brand-400"></span>
+          Hoshiko Tech の小規模プロジェクト向けサービス
+        </div>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]" data-animate data-animate-delay="1">
+          シンプルなサイトを、<br>
+          <span class="gradient-text">きちんと。</span>
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-slate-400 max-w-2xl" data-animate data-animate-delay="2">小規模ビジネスや個人の方に向けた、速く、きれいで、安定したウェブサイトを提供しています。ワンページのシンプルなサイトから、オンライン予約、会員登録、お客様情報の管理に対応する本格的なサイトまで、現役のソフトウェア開発者が副業ならではの手ごろな価格でお作りします。
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4" data-animate data-animate-delay="3">
+          <a href="#contact" class="inline-flex items-center gap-2 text-base font-medium px-7 py-3.5 rounded-lg bg-brand-500 hover:bg-brand-400 text-slate-950 transition-colors">
+            見積もりを依頼する
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+          <a href="#pricing" class="inline-flex items-center gap-2 text-base font-medium px-7 py-3.5 rounded-lg border border-slate-700 text-slate-200 hover:border-slate-500 hover:bg-slate-800/50 transition-all">
+            料金を見る
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="relative py-24 md:py-32 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl" data-animate>
+        <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">料金</span>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">3つのシンプルなプラン</h2>
+        <p class="mt-4 text-lg text-slate-400">プロジェクトに合ったレベルをお選びください。メッセージをいただければ最適なプランをご案内します。</p>
+      </div>
+
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-y-0 md:grid-rows-[auto_auto_auto_auto_auto_auto_auto_1fr]">
+
+        <!-- Tier 1 -->
+        <div class="group relative flex flex-col md:grid md:row-span-full md:grid-rows-[subgrid] p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 card-glow transition-all duration-300" data-animate data-animate-delay="1">
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-brand-500/10 text-brand-400 mb-6 mx-auto">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-center">ワンページサイト</h3>
+          <p class="mt-2 text-sm text-slate-400 text-center">ランディングページ、ポートフォリオ、まずはきれいな名刺代わりのサイトが欲しい方に最適です。</p>
+          <div class="mt-6 text-center">
+            <span class="block text-3xl font-bold leading-tight">&pound;150<span class="text-lg font-medium text-slate-400">〜</span></span>
+            <span class="block text-sm text-slate-400">＋VAT</span>
+          </div>
+          <p class="mt-2 text-sm text-slate-500 text-center">目安の納期 約1週間</p>
+          <p class="mt-3 text-sm text-slate-400 text-center">任意のケアプラン &pound;15/月〜</p>
+          <a href="#contact" class="mt-6 inline-flex w-full items-center justify-center gap-2 text-sm font-medium px-5 py-2.5 rounded-lg border border-slate-700 text-slate-200 hover:border-slate-500 hover:bg-slate-800/50 transition-all">相談する</a>
+          <ul class="mt-8 space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>必要なセクションを1ページに集約（会社概要・サービス・ギャラリー・お問い合わせ）</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>スマホ対応のレスポンシブ設計</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>お問い合わせボタン／メールリンク</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>基本的なSEOと高速な表示</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>お持ちのドメインへ公開</li>
+          </ul>
+        </div>
+
+        <!-- Tier 2 -->
+        <div class="group relative flex flex-col md:grid md:row-span-full md:grid-rows-[subgrid] p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 card-glow transition-all duration-300" data-animate data-animate-delay="2">
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-brand-500/10 text-brand-400 mb-6 mx-auto">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-center">複数ページのサイト</h3>
+          <p class="mt-2 text-sm text-slate-400 text-center">会社概要やサービス紹介など複数のページを、ナビゲーション付きで見せたい方に。各ページが個別に検索に強くなります。</p>
+          <div class="mt-6 text-center">
+            <span class="block text-3xl font-bold leading-tight">&pound;120<span class="text-lg font-medium text-slate-400">/ページ〜</span></span>
+            <span class="block text-sm text-slate-400">＋VAT</span>
+          </div>
+          <p class="mt-2 text-sm text-slate-500 text-center">目安の納期 2週間〜</p>
+          <p class="mt-3 text-sm text-slate-400 text-center">任意のケアプラン &pound;15/月〜</p>
+          <a href="#contact" class="mt-6 inline-flex w-full items-center justify-center gap-2 text-sm font-medium px-5 py-2.5 rounded-lg border border-slate-700 text-slate-200 hover:border-slate-500 hover:bg-slate-800/50 transition-all">相談する</a>
+          <ul class="mt-8 space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><span class="text-slate-200 font-medium">ワンページサイト</span>のすべて</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>ナビゲーション付きの複数ページ</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>全ページで統一されたデザイン</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>各ページを個別にSEO最適化</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>お問い合わせフォーム</li>
+          </ul>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="group relative flex flex-col md:grid md:row-span-full md:grid-rows-[subgrid] p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 card-glow transition-all duration-300" data-animate data-animate-delay="3">
+          <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-brand-500/10 text-brand-400 mb-6 mx-auto">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
+          </div>
+          <h3 class="text-xl font-bold text-center">高機能サイト</h3>
+          <p class="mt-2 text-sm text-slate-400 text-center">会員機能やオンライン予約、他のツールとの連携など、本格的な機能が必要な場合に。</p>
+          <div class="mt-6 text-center">
+            <span class="block text-3xl font-bold leading-tight">&pound;700<span class="text-lg font-medium text-slate-400">〜</span></span>
+            <span class="block text-sm text-slate-400">＋VAT</span>
+          </div>
+          <p class="mt-2 text-sm text-slate-500 text-center">納期は案件ごとにお見積もり</p>
+          <p class="mt-3 text-sm text-brand-400 text-center">ケアプラン &pound;40/月〜（必須）</p>
+          <a href="#contact" class="mt-6 inline-flex w-full items-center justify-center gap-2 text-sm font-medium px-5 py-2.5 rounded-lg border border-slate-700 text-slate-200 hover:border-slate-500 hover:bg-slate-800/50 transition-all">相談する</a>
+          <ul class="mt-8 space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><span class="text-slate-200 font-medium">複数ページのサイト</span>のすべて</span></li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>データの保存・管理（予約・会員・注文など）</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>フォーム・ログイン・予約機能</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>他のツールとの連携（決済・メールなど）</li>
+            <li class="flex items-start gap-3"><svg class="w-5 h-5 text-brand-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>実運用のアクセスにも対応</li>
+          </ul>
+        </div>
+
+      </div>
+      <p class="mt-8 text-sm text-slate-500" data-animate>価格は目安で、最終的なお見積もりは内容により変動します。表示価格はVAT（英国付加価値税）を含みません。英国内のお客様には20%のVATが加算され、英国外のお客様にはVATはかかりません。ケアプランは月払いまたは年払いです（年払いがお得です）。ドメインとホスティングはお客様ご自身の名義で用意し、費用は直接お支払いいただきます。</p>
+
+      <div class="mt-12 p-8 rounded-2xl bg-slate-900/50 border border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6" data-animate>
+        <div>
+          <h3 class="text-lg font-semibold">もっと本格的なプロジェクトをお考えですか？</h3>
+          <p class="mt-1 text-sm text-slate-400">大規模・複雑なプロジェクト（カスタムソフトウェア開発、システム連携、拡張性の高い基盤など）は、Hoshiko Tech のコンサルティングをご覧ください。</p>
+        </div>
+        <a href="/ja/" class="shrink-0 inline-flex items-center gap-2 text-sm font-medium px-5 py-2.5 rounded-lg border border-slate-700 text-slate-200 hover:border-slate-500 hover:bg-slate-800/50 transition-all">
+          Hoshiko Tech を見る
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section id="process" class="relative py-24 md:py-32 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl" data-animate>
+        <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">進め方</span>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">ご相談から公開まで、シンプルに</h2>
+        <p class="mt-4 text-lg text-slate-400">専門用語や長い手続きは不要です。一緒に進める流れをご紹介します。</p>
+      </div>
+
+      <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800" data-animate data-animate-delay="1">
+          <span class="text-sm font-bold text-brand-400">01</span>
+          <h3 class="mt-3 text-lg font-semibold">ご相談</h3>
+          <p class="mt-2 text-sm text-slate-400">ご要望をお聞かせください。プラン・内容・料金を最初に決めて、明朗に進めます。</p>
+        </div>
+        <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800" data-animate data-animate-delay="2">
+          <span class="text-sm font-bold text-brand-400">02</span>
+          <h3 class="mt-3 text-lg font-semibold">デザイン</h3>
+          <p class="mt-2 text-sm text-slate-400">きれいなレイアウトを用意し、早い段階でプレビューを共有してご意見を伺います。</p>
+        </div>
+        <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800" data-animate data-animate-delay="3">
+          <span class="text-sm font-bold text-brand-400">03</span>
+          <h3 class="mt-3 text-lg font-semibold">制作</h3>
+          <p class="mt-2 text-sm text-slate-400">きちんと作り込み、実機でテストし、修正も1回分を含めて対応します。</p>
+        </div>
+        <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800" data-animate data-animate-delay="4">
+          <span class="text-sm font-bold text-brand-400">04</span>
+          <h3 class="mt-3 text-lg font-semibold">公開</h3>
+          <p class="mt-2 text-sm text-slate-400">お持ちのドメインで公開します。コード・コンテンツ・アカウントはすべてお客様のものです。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="relative py-24 md:py-32 border-t border-slate-800/60">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center" data-animate>
+        <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">よくある質問</span>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">よくいただくご質問</h2>
+      </div>
+
+      <div class="mt-12 space-y-4">
+        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800" data-animate data-animate-delay="1">
+          <h3 class="text-lg font-semibold">制作にはどのくらいかかりますか？</h3>
+          <p class="mt-2 text-slate-400">ワンページのサイトなら、週単位ではなく数日程度が目安です。複数ページや本格的な案件はもう少しかかります。着手前に現実的なスケジュールをお伝えします。</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800" data-animate data-animate-delay="1">
+          <h3 class="text-lg font-semibold">サイトは自分のものになりますか？</h3>
+          <p class="mt-2 text-slate-400">はい、完全にお客様のものです。コード・コンテンツ・各種アカウントすべてをお渡しします。特定の業者に縛られることはなく、いつでも他社へ移行できます。</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800" data-animate data-animate-delay="1">
+          <h3 class="text-lg font-semibold">ホスティングやドメインはどうなりますか？</h3>
+          <p class="mt-2 text-slate-400">ドメインはお客様ご自身の名義で取得・保有していただき、常に完全にコントロールできる状態にします。ご希望であればおすすめのレジストラのご案内や取得のサポートを行い、サイトへの接続など技術的な設定はこちらで対応します。ホスティングも同様に、お客様のアカウントで用意して費用は直接お支払いいただきます。シンプルなサイトは無料で運用できる場合もあります。</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800" data-animate data-animate-delay="1">
+          <h3 class="text-lg font-semibold">ケアプランには何が含まれますか？</h3>
+          <p class="mt-2 text-slate-400">テキストや写真の差し替えといった小さな変更・更新と基本的な保守を、毎月一定の範囲内で対応します（月払いまたは年払い）。新しいページ・新機能・新たな連携は含まず、それらは新規のお仕事として別途お見積もりします。高機能サイトはバックエンド（セキュリティ更新・バックアップ・稼働管理）を私が管理するため、ケアプランが必須です。ご自身で編集したい場合は、オプションとして設定も可能です。</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800" data-animate data-animate-delay="1">
+          <h3 class="text-lg font-semibold">Hoshiko Tech のコンサルティングと同じですか？</h3>
+          <p class="mt-2 text-slate-400">その傍らで運営している、より手頃なサービスです。同じ技術水準のまま、シンプルなウェブサイトと個人・小規模の予算に合わせた内容にしています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="relative py-24 md:py-32 border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mx-auto text-center" data-animate>
+        <span class="text-sm font-semibold text-brand-400 tracking-wide uppercase">お問い合わせ</span>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">あなたのサイトを作りましょう</h2>
+        <p class="mt-4 text-lg text-slate-400">プロジェクトの目的や、おおよそのイメージを少し教えてください。おすすめのプランと概算のお見積もりをお返しします。もちろん、ご依頼の義務はありません。</p>
+      </div>
+
+      <div class="mt-12 max-w-xl mx-auto" data-animate data-animate-delay="1">
+        <div class="p-8 rounded-2xl bg-slate-900/50 border border-slate-800 text-center space-y-6">
+          <div class="w-14 h-14 flex items-center justify-center rounded-2xl bg-brand-500/10 text-brand-400 mx-auto">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm text-slate-400 mb-2">メールはこちら</p>
+            <a href="mailto:info@hoshiko.tech?subject=%E3%82%A6%E3%82%A7%E3%83%96%E3%82%B5%E3%82%A4%E3%83%88%E5%88%B6%E4%BD%9C%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87" class="text-2xl font-semibold text-brand-400 hover:text-brand-300 transition-colors">info@hoshiko.tech</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-2.5 text-sm font-bold">
+          <img src="/logo.svg" alt="Hoshiko Tech" class="h-7 w-7">
+          <span>Hoshiko Tech Ltd.</span>
+        </div>
+
+        <div class="flex items-center gap-6 text-sm text-slate-500">
+          <a href="/ja/" class="hover:text-slate-300 transition-colors">Hoshiko Tech ホーム</a>
+          <a href="/ja/legal.html" class="hover:text-slate-300 transition-colors">プライバシーポリシー</a>
+          <span>&copy; 2026 Hoshiko Tech Ltd.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      if (scrollY > 50) {
+        navbar.classList.add('bg-slate-950/80', 'backdrop-blur-xl', 'border-b', 'border-slate-800/50');
+      } else {
+        navbar.classList.remove('bg-slate-950/80', 'backdrop-blur-xl', 'border-b', 'border-slate-800/50');
+      }
+    });
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    let menuOpen = false;
+
+    menuBtn.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.setAttribute('d', menuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16');
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuOpen = false;
+        menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      });
+    });
+
+    // Scroll animation with Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
