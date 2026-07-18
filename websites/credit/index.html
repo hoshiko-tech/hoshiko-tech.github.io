@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Built by Hoshiko Tech — credit preview</title>
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <style>
+    :root { color-scheme: dark; }
+    body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background: #020617; color: #e2e8f0; }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 48px 20px 80px; }
+    h1 { font-size: 22px; margin: 0 0 4px; }
+    .sub { color: #94a3b8; font-size: 14px; margin: 0 0 32px; }
+    .label { font: 600 11px system-ui; letter-spacing: .1em; text-transform: uppercase; opacity: .55; margin-bottom: 14px; }
+    .demo { border-radius: 14px; padding: 36px; text-align: center; margin-bottom: 16px; }
+    .d-dark { background: #0f172a; color: #94a3b8; }
+    .d-light { background: #f8fafc; color: #475569; }
+    .d-brand { background: #06b6d4; color: #ecfeff; }
+    .d-brand .label { color: #ecfeff; }
+    code { background: #1e293b; padding: 1px 6px; border-radius: 5px; font-size: 13px; }
+    .note { color: #94a3b8; font-size: 14px; line-height: 1.6; margin-top: 28px; }
+    a.readme { color: #22d3ee; }
+
+    /* --- credit snippet styles (namespaced) --- */
+    .hshk-credit{display:inline-flex;align-items:center;gap:6px;font:500 13px/1.4 ui-sans-serif,system-ui,-apple-system,sans-serif;color:inherit;opacity:.75;text-decoration:none;transition:opacity .2s ease}
+    .hshk-credit:hover{opacity:1}
+    .hshk-name{background:linear-gradient(135deg,#22d3ee,#818cf8,#c084fc);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:600}
+    .hshk-spark{flex:none;animation:hshk-tw 2.8s ease-in-out infinite;transition:transform .5s ease}
+    .hshk-credit:hover .hshk-spark{transform:rotate(90deg)}
+    @keyframes hshk-tw{0%,100%{opacity:.5}50%{opacity:1}}
+    @media(prefers-reduced-motion:reduce){.hshk-spark{animation:none}}
+  </style>
+</head>
+<body>
+  <!-- Shared gradient definition for all sparkles on this preview page -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <linearGradient id="hshk-g" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22d3ee"/><stop offset=".5" stop-color="#818cf8"/><stop offset="1" stop-color="#c084fc"/>
+    </linearGradient>
+  </defs></svg>
+
+  <div class="wrap">
+    <h1>&ldquo;Built by Hoshiko Tech&rdquo; credit</h1>
+    <p class="sub">Drop-in footer credit for client sites. Hover the badge to see the sparkle spin. The copy-paste code and usage notes live in <a class="readme" href="./README.md">README.md</a>.</p>
+
+    <div class="demo d-dark">
+      <div class="label">on a dark footer</div>
+      <a class="hshk-credit" href="https://www.hoshiko.tech/websites/?ref=preview" target="_blank" rel="noopener">
+        <svg class="hshk-spark" width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="url(#hshk-g)" d="M12 0c.5 6.5 5 11 12 12-7 1-11.5 5.5-12 12-.5-6.5-5-11-12-12 7-1 11.5-5.5 12-12z"/></svg>
+        <span>Built by <span class="hshk-name">Hoshiko Tech Ltd</span></span>
+      </a>
+    </div>
+
+    <div class="demo d-light">
+      <div class="label">on a light footer</div>
+      <a class="hshk-credit" href="https://www.hoshiko.tech/websites/?ref=preview" target="_blank" rel="noopener">
+        <svg class="hshk-spark" width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="url(#hshk-g)" d="M12 0c.5 6.5 5 11 12 12-7 1-11.5 5.5-12 12-.5-6.5-5-11-12-12 7-1 11.5-5.5 12-12z"/></svg>
+        <span>Built by <span class="hshk-name">Hoshiko Tech Ltd</span></span>
+      </a>
+    </div>
+
+    <div class="demo d-brand">
+      <div class="label">on a coloured footer</div>
+      <a class="hshk-credit" href="https://www.hoshiko.tech/websites/?ref=preview" target="_blank" rel="noopener">
+        <svg class="hshk-spark" width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="url(#hshk-g)" d="M12 0c.5 6.5 5 11 12 12-7 1-11.5 5.5-12 12-.5-6.5-5-11-12-12 7-1 11.5-5.5 12-12z"/></svg>
+        <span>Built by <span class="hshk-name">Hoshiko Tech Ltd</span></span>
+      </a>
+    </div>
+
+    <p class="note">To use it: copy the snippet from <code>README.md</code> into a client's footer and replace <code>CLIENT</code> in <code>?ref=CLIENT</code> with that client's slug. The snippet is fully self-contained (its own styles are included).</p>
+  </div>
+</body>
+</html>
