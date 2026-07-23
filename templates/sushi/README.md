@@ -9,6 +9,9 @@ gathering everything needed to start building their website.
   directly to the client (or filled in together on a call). It's tailored to the
   sushi genre: omakase/set courses, sake lists, allergens for raw fish, Tabelog
   and other listing sites, and an English/Japanese bilingual option.
+- **`tally-form-fields.md`** — the same questionnaire as a build sheet for a
+  **Tally** form (field labels, block types, and which are required), so clients
+  can submit everything in one place. Also works for Google Forms.
 
 ## How to use it
 
